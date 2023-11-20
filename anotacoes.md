@@ -26,3 +26,31 @@
     7. Pronto! Agora é só alegria.
 
 * <a href="https://www.alura.com.br/artigos/nova-exigencia-do-git-de-autenticacao-por-token-o-que-e-o-que-devo-fazer?_gl=1*1e2h0wz*_ga*MTA1MTcwOTE3My4xNjg4MTU1NjE5*_ga_1EPWSW3PCS*MTY5OTYyMzAzMS45MC4xLjE2OTk2MjMwNTUuMC4wLjA.*_fplc*M2dNQUswSGhqRW1RZlUzdnF2Sjg0MEdRUUNUV3ZNUVgzaVg4T0xpd1JxbmRPS2Z4OEIlMkJUT0tMVDhUJTJCemFWZVU2TjVpZSUyQk12cEp0dmNUblQxcUFBVFJQT3dkViUyQk1MVnJETER5RGs3bU5WTmRxRHdkU2JGckQlMkZCWmJ4TXVTZyUzRCUzRA..">Login por Token (HTTPS não é mais suportado?)</a>
+
+* Existem boas práticas ao escrever mensagens de commit:
+    * Manter no máximo 72 caracteres (caso a mensagem precise ser maior, pulamos para a próxima linha, mas mantendo os 72 caracteres em cada)
+
+    * Uma recomendação é usar verbos no infinitivo, mostrando o que o commit atual irá fazer. Contudo, dependendo da cultura do lugar, a formatação poderá mudar, porém, o que prevalece é a mensagem estar clara e refletir o que foi feito de fato
+
+    * Evitar colocar muitos detalhes técnicos na mensagem, pois isso além de deixá-la grande, tira o propósito do commit, que é apenas de trazer um resumão do que foi feito. Detalhes técnicos podem ser adicionados na documentação do projeto ou em comentários de código
+
+* Commits devem ser realizados preferencialmente ao finalizar uma tarefa específica, seja consertar um bug ou incrementar uma novo passo de uma funcionalidade, sendo possível manter um rastreio claro do que foi feito. Deve-se evitar portanto modificações muito grandes ou pequenas demais, pois haverão pessoas (incluindo você) que irão ler as modificações do código futuramente. NUNCA SE DEVE DAR COMMIT DE CÓDIGO COM BUG.
+
+* <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-O-B%C3%A1sico-do-Git">Documentação oficial do Git</a>
+
+* Para permitir que outras pessoas trabalhem em um repositório criado por mim, é necessário adicionar os colaboradores através de seu nome de usuário do GitHub.
+
+* Caso a mudança realizada tenha sido feita por duas ou mais pessoas, podemos dar co-autoria para eles neste formato de mensagem de commit:
+
+```git
+$ git commit -m "Adicionar nova funcionalidade.
+>
+>
+Co-authored-by: NOME <nome@email.com>
+Co-authored-by: OUTRO-NOME <outro@email.com>"
+
+# Fechar as aspas só depois do último nome
+```
+* <a href="https://www.alura.com.br/artigos/open-source-uma-breve-introducao">Como colaborar em projetos Open Source</a>
+
+* Para sincronizar as mudanças do repositório remoto com o local (baixar as mudanças feitas), utilizamos o comando ```git pull```.
