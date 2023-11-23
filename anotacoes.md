@@ -54,3 +54,9 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
 * <a href="https://www.alura.com.br/artigos/open-source-uma-breve-introducao">Como colaborar em projetos Open Source</a>
 
 * Para sincronizar as mudanças do repositório remoto com o local (baixar as mudanças feitas), utilizamos o comando ```git pull```.
+
+* Quando trabalhamos colaborativamente em um projeto, há a possibildade de ocorrerem **conflitos**. Os conflitos nada mais são que o choque entre duas mudanças (commits) que estariam sendo implementadas em uma mesma linha de um mesmo arquivo. Isso geralmente ocorre quando não se dá o ```git pull``` antes de começar a trabalhar em um arquivo, não atualizando o estado atual daquela branch antes de começar a trabalhar nela. Para resolver os conflitos, deve-se escolher qual informação prevalecerá entre os conflitos e dar um novo commit com as modificações feitas.
+
+* <a src="https://jtemporal.com/resolvendo-conflitos/">Mais sobre conflitos no Git</a>
+
+* É possível também de acontecer que um dev se arrependa da mudança que ele fez através de um commit. Como o git é um sistema de VERSIONAMENTO, é possível então VOLTAR à versão (commit) antes da mudança feita. Para isso, usamos ```git revert <id_do_commit_a_ser_revertido>```, onde será feito um NOVO COMMIT desfazendo as mudanças que o commit tal fez.
