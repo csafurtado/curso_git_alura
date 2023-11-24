@@ -60,3 +60,13 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
 * <a src="https://jtemporal.com/resolvendo-conflitos/">Mais sobre conflitos no Git</a>
 
 * É possível também de acontecer que um dev se arrependa da mudança que ele fez através de um commit. Como o git é um sistema de VERSIONAMENTO, é possível então VOLTAR à versão (commit) antes da mudança feita. Para isso, usamos ```git revert <id_do_commit_a_ser_revertido>```, onde será feito um NOVO COMMIT desfazendo as mudanças que o commit tal fez.
+
+* Para apagar um commit do histórico, utilizamos o comando ```git reset --hard <id_do_commit_ANTERIOR>```. Este comando só é recomendado no âmbito do repositório local. Estes são os principais modos de _reset_ que podemos utilizar:
+    * **--soft**: Isso deixa todos os seus arquivos alterados como "Changes to be committed" (volta para a fase de stage)
+    * **--hard**: Isso reverte todas as mudanças feitas pelo commit, como se não tivesse acontecido nada.
+
+* <a href="https://git-scm.com/docs/git-reset/pt_BR">Para saber mais sobre o ```git reset```</a>
+
+* Para alterar a mensagem de um commit, podemos utilizar o comando ```git commit --amend -m "Nova mensagem de commit"```. Para alterar o conteúdo do commit em si, basta utilizar só até a flag _--amend_, já que este comando pega o último commit dado como referência
+
+* 
