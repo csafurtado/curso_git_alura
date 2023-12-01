@@ -1,3 +1,5 @@
+<h2>Git e GitHub: Compartilhando e colaborando em projetos</h2>
+
 * Comandos Git:
     * `git config user.name ou user.email`: Visualiza qual é o nome ou email do usuário git atual. Para alterá-los, basta colocar a flag --config antes do `user.name` ou do `user.email`;
     
@@ -74,3 +76,11 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
 * É possível pedir para o Git ignorar certas pastas ou/e arquivos através de um arquivo chamado ```.gitignore```. O site gitignore.io gera um arquivo para ignorar arquivos derivados da tecnologia escolhida.
 
 * A ferramenta _gist_ do GitHub serve para compartilhar trechos de código de um projeto, sem ter que compartilhá-lo por completo.
+
+<h2>Git e Github: estratégias de ramificação, Conflitos e Pull Requests</h2>
+
+* O que é Open Source? São projetos públicos nos quais permitem colaboração ed várias pessoas.
+
+* As Issues são ferramentas interessantes dentro de um repositório, podendo ter várias utilidades, desde colocar histórias de usuário, épicos até sugestões de melhorias ou bugs relatados dentro do código. Quem irá dizer o propósito das issues do repositório serão os donos dele.
+
+* 
