@@ -69,4 +69,8 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
 
 * Para alterar a mensagem de um commit, podemos utilizar o comando ```git commit --amend -m "Nova mensagem de commit"```. Para alterar o conteúdo do commit em si, basta utilizar só até a flag _--amend_, já que este comando pega o último commit dado como referência
 
-* 
+* <a src="https://www.alura.com.br/artigos/escrever-bom-readme">Dicas para escrever um bom README.md</a>
+
+* É possível pedir para o Git ignorar certas pastas ou/e arquivos através de um arquivo chamado ```.gitignore```. O site gitignore.io gera um arquivo para ignorar arquivos derivados da tecnologia escolhida.
+
+* A ferramenta _gist_ do GitHub serve para compartilhar trechos de código de um projeto, sem ter que compartilhá-lo por completo.
