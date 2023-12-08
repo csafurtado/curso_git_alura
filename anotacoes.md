@@ -83,4 +83,19 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
 
 * As Issues são ferramentas interessantes dentro de um repositório, podendo ter várias utilidades, desde colocar histórias de usuário, épicos até sugestões de melhorias ou bugs relatados dentro do código. Quem irá dizer o propósito das issues do repositório serão os donos dele.
 
-* 
+* Para se contribuir em um projeto Open Source deve-se:
+    1. Escolher a issue na qual se deseja trabalhar
+    
+    2. Fazer um fork do projeto e cloná-lo (ou adicionar o remoto caso já exista um repositório local)
+
+    3. Fazer as modificações desejadas e enviá-las ao seu repositorio forkado
+
+    3.1. Compilar todas modificações (commits) em um só através do comando ```git rebase -i HEAD~<id_do_commit_anterior_a_modificacao>```
+
+    3.2. Na janela de rebase, o _pick_ será o commit onde tudo será compactado e _s_ são os commits a serem compactados em um _pick_ do mais antigo estando em cima e o mais novo em baixo.
+
+    3.3. Após isso, criar uma mensagem para o novo commit a ser feito.
+
+    4. Criar um Pull Request para o repositório original, colocando uma descrição do que foi feito. Os donos deste repositório irão analisar a sua solução e aceitar ou não
+
+* Existem outras plataformas de git, como GitLab e o BitBucket
