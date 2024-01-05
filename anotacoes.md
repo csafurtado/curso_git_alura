@@ -15,7 +15,7 @@
 
     * `git push -u origin \<branch_desejada>`: Envia os commits salvos na branch atual para a branch remota main. Com a flag -u, se for somente escrito o comando _git push_, o git saberá que é para enviar os commits para a main remota automaticamente, sem a flag precisaria fazer essa indicação.
 
-    * 
+    * `git show <hash_do_commit>`: Mostra as alterações que foram feitas naquele commit.
 
 * Para o caso de SSH, é necessário configurar uma chave SSH para conectar um 'repo' remoto (GitHub) no local, deve-se seguir estes passos:
     1. Ir nas configurações de perfil no GitHub e ir em configurações
@@ -99,3 +99,22 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
     4. Criar um Pull Request para o repositório original, colocando uma descrição do que foi feito. Os donos deste repositório irão analisar a sua solução e aceitar ou não
 
 * Existem outras plataformas de git, como GitLab e o BitBucket
+
+* <a src="git-school.github.io/visualizing-git">Site para visualizar comandos git</a>
+
+* A diferença entre o ```git merge``` e o ```git rebase``` é que o primeiro cria um commit extra na branch atual com a junção de outra branch (ex. branch 'feature' e a 'main'. As alterações feitas no último commit da 'feature' vão ser juntadas com as modificações feitas no último commit da 'main', porém em um novo commit). No caso do ```git rebase```, todos os commits feitos numa branch são adicionados logo após o último commit da branch atual (ex. branch 'feature' e a 'main'. As alterações feitas pelos commits em 'feature' após sua criação iriam para a 'main' logo após o seu último commit, todos em sequência)
+
+* O comando `git cherry-pick <hash_do_commit>` adiciona o commit especificado logo após o último commit feito na branch atual. Ele serve para pegar mudanças úteis que estão em outras branches sem precisar refazer o trabalho.
+
+* O comando `git bisect` ajuda o desenvolvedor a encontrar dentro de um intervalo de commits, onde um erro possívelmente foi introdzido ao programa, retornando o commit causador do problema. Para utilizá-lo, deve-se :
+    1. Iniciar o procedimento de _bisect_, devemos utilizar o comando: `git bisect start`.
+
+    2. Informar qual commit que está "ruim" por conta do código (geralmente é o atual, ou o HEAD) utilizando `git bisect bad <hash_do_commit>`
+
+    3. Informar qual commit que a princípio estava funcionando e que estava "bom" utilizando `git bisect good <hash_do_commit>`. 
+
+    4. A partir daqui, o git irá começar sua busca por possíveis commits que podem ter introduzido tal erro, mostrando-os ao usuário. Caso encontre alguns, eles serão analisados um por um, isto é, o git irá dar um _checkout_ para o atual candidato de erro, permitindo o Dev ver o estado do código daquele commit. Se o Dev achar que aquele estado estava bom (o código estava sem aquele erro), ele irá digitar `git bisect good` apenas, caso contrário, `git bisect bad` e então se irá para o próximo commit candidato de erro caso haja.
+
+    5. Ao fim das análises, o git irá mostrar então o commit com mais chances de ser o "autor" do bug. A partir daí, o dev pode escolher o que fazer com este commit. Então para encerrar essa funcionalidade, basta digitar agora `git bisect reset`.
+
+* 
