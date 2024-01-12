@@ -9,6 +9,8 @@
 
     * `git branch -M \<nome_novo>`: Altera o nome da branch atual para o nome_novo;
 
+    * `git branch -d \<nome_da_branch_existente>`: Remove uma branch que já tem seu trabalho unido à branch atual. Caso nesta branch hajam commits que não estão na branch atual, basta usar o '-D' ao invés do '-d'.
+
     * `git remote add origin \<url_do_repositorio_remoto>`: Linka o repositório local com o remoto, podendo ser por HTTPS ou SSH (origin é o apelido padrão dado ao repositório remoto, para não precisar ficar escrevendo sua url toda hora).
 
     * `git remote -v`: Mostra os repositórios que estão configurados para envio de commits (push) e de baixar commits (fetch).
@@ -116,5 +118,19 @@ Co-authored-by: OUTRO-NOME <outro@email.com>"
     4. A partir daqui, o git irá começar sua busca por possíveis commits que podem ter introduzido tal erro, mostrando-os ao usuário. Caso encontre alguns, eles serão analisados um por um, isto é, o git irá dar um _checkout_ para o atual candidato de erro, permitindo o Dev ver o estado do código daquele commit. Se o Dev achar que aquele estado estava bom (o código estava sem aquele erro), ele irá digitar `git bisect good` apenas, caso contrário, `git bisect bad` e então se irá para o próximo commit candidato de erro caso haja.
 
     5. Ao fim das análises, o git irá mostrar então o commit com mais chances de ser o "autor" do bug. A partir daí, o dev pode escolher o que fazer com este commit. Então para encerrar essa funcionalidade, basta digitar agora `git bisect reset`.
+
+* Para descobrir qual usuário git foi responsável pela alteração de uma linha em um arquivo, basta usar o comando `git blame <nome_do_arquivo>`. O git então irá mostrar cada linha do arquivo solicitado, com a hash do commit e o usuário que fez a alteração desta linha.
+
+* A branch master é aquela que conterá o código a ser executado no servidor de produção. Não se deve codar diretamente nela, mas a partir de outras branches, onde serão feitos antes testes para verificação de bugs no código, garantindo a qualidade do código a ser executado neste servidor.
+
+* Para a implementação de novas funcionalidades no projeto, deve-se criar uma branch de desenvolvimento, ou 'dev'. A partir dela, para cada funcionalidade a ser implementada, cria-se uma nova branch para esta. Ao fim da implementação de uma funcionalidade, deve-se dar merge para a 'dev'. Somente quando todas as funcionalidades de um ciclo de desenvolvimento estiverem sido completadas é que irá fazer merge da 'dev' com a 'main' (ou 'master').
+
+* Dependendo ainda das práticas da equipe de desenvolvimento, seria necessário ainda a criação de uma branch de 'release' antes de seu merge com a 'master', em que se houvesse algum novo bug detectado nesta 'release', poderiam ser realizados commits nela mesmo para corrigí-los antes do merge com a 'main'. Somente poderão ser feitos commits de correções de bugs DESTA RELEASE, ou seja, funcionalidades ou bugs que não envolvam esta release NÃO devem ser tratados aqui.
+
+* Caso seja encontrado um bug na 'master' que necessite de uma correção urgente, ainda não se deve commitar na 'main', mas sim criar uma nova branch a partir dela para corrigir este bug. Finalizada a correção, o merge deverá ser feito para a 'main' mesmo. Geralmente se chama de 'hotfix'. Também deverá ser feito o merge com a 'dev', para que não haja conflitos ao merjar com a 'main' futuramente.
+
+* O comando `git tag -a <nome_da_versão>` faz uma "marcação" de uma versão do projeto, onde o nome dela pode ser qualquer coisa, sempre levando em consideração as práticas da equipe de desenvolvimento.
+
+* O nome destas boas práticas em git se chama <a href="https://www.alura.com.br/artigos/git-flow-o-que-e-como-quando-utilizar">Git Flow</a>. Contudo, este não é o único jeito de utilizar o Git, podendo ser ele modificado para melhor adequar as necessidades e cultura da equipe de desenvolvimento e da empresa.
 
 * 
